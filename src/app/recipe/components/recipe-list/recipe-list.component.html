@@ -1,0 +1,7 @@
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <app-recipe-list-item fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let recipe of recipes$ | async"
+            [recipe]="recipe"></app-recipe-list-item>
+        <!-- smart dumb-->
+    </div>
+</div>

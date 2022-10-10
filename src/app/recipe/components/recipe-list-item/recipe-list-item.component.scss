@@ -1,0 +1,32 @@
+.example-card {
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.card-img-class {
+    height: 225px;
+    object-fit: cover;
+}
+
+mat-card-content {
+    height: 75px;
+}
+
+.img-icon {
+    height: 25px !important;
+    padding-right: 7px;
+}
+
+.bg-btn-color {
+    background-color: aliceblue;
+}
+
+.fav-btn-color {
+    background: lightblue;
+    color: white;
+}
