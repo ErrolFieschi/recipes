@@ -1,4 +1,25 @@
 <div class="container">
+    <mat-card class="search-bar">
+        <mat-card-title-group>
+            <mat-card-title>
+                Rechercher une recette
+            </mat-card-title>
+            <div class="form">
+                
+                <mat-form-field >
+                    <input matInput type="text" [formControl]="searchCtrl">
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select [formControl]="searchTypeCtrl">
+                        <mat-option style="color: black;" *ngFor="let option of searchTypeOptions" [value]="option.value">{{ option.label }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card-title-group>
+        <!-- ... -->
+    </mat-card>
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
         <app-recipe-list-item fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let recipe of recipes$ | async"
             [recipe]="recipe"></app-recipe-list-item>
