@@ -1,7 +1,7 @@
 import { Comment } from "src/app/core/models/comment.model";
 
 export class Recipe {
-    id!: number;
+    _id!: number;
     title!: string;
     description!: string;
     steps!: string[];

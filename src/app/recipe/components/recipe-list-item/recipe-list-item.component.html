@@ -1,6 +1,6 @@
 <mat-card class="example-card">
-    <img class="card-img-class" mat-card-image *ngIf="recipe.imageUrl as imageUrl" [src]="imageUrl"
-        [alt]="recipe.title">
+    <img (click)="onContinue(recipe._id)" class="card-img-class" mat-card-image *ngIf="recipe.imageUrl as imageUrl"
+        [src]="imageUrl" [alt]="recipe.title">
     <mat-card-title>{{ recipe.title | titlecase }}</mat-card-title>
     <mat-card-subtitle><span>{{ recipe.createdDate | timeAgo }}</span></mat-card-subtitle>
     <mat-card-content>{{ recipe.description }}</mat-card-content>
@@ -13,9 +13,12 @@
     <mat-card-actions>
         <button class="fav-btn-color" mat-button>Favoris</button>
         <!--mat-icon>query_builder</mat-icon-->
-        <button mat-button class="bg-btn-color"><img class="img-icon" src="../../../../assets/images/baking.png" alt="Cook Time">{{
+        <button mat-button class="bg-btn-color"><img class="img-icon" src="../../../../assets/images/baking.png"
+                alt="Cook Time">{{
             recipe.prepTime + " min"}}</button>
-        <button mat-button class="bg-btn-color"><img class="img-icon" src="../../../../assets/images/cooking.png" alt="Prep Time">{{
+        <button mat-button class="bg-btn-color"><img class="img-icon" src="../../../../assets/images/cooking.png"
+                alt="Prep Time">{{
             recipe.cookTime + " min"}}</button>
+
     </mat-card-actions>
 </mat-card>

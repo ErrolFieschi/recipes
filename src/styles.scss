@@ -3,6 +3,7 @@
 html,
 body {
     height: 100%;
+  
 }
 
 mat-card{
@@ -16,9 +17,9 @@ mat-card-subtitle{
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: "Montserrat", Roboto, "Helvetica Neue", sans-serif;
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: "Montserrat" ,Roboto, "Helvetica Neue", sans-serif;
     /*
     background-image: url('./assets/images/winston.jpg');
     background-repeat: no-repeat;
@@ -38,3 +39,8 @@ a {
   }
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Monserrat"), url(./assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf) format("truetype");
+}

@@ -1,0 +1,93 @@
+.example-card {
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.card-img-class {
+    height: 225px;
+    object-fit: cover;
+}
+
+.img-icon {
+    height: 25px !important;
+    padding-right: 7px;
+}
+
+.bg-btn-color {
+    background-color: aliceblue;
+}
+
+.fav-btn-color {
+    background: lightblue;
+    color: white;
+}
+
+.circle {
+    background: rgb(55, 55, 55);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    display: inline-block;
+    vertical-align: super;
+}
+
+.mat-card-subtitle {
+    margin-top: 10px !important;
+}
+
+h3 {
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.flex-content-between {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flex-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.steps {
+    margin-bottom: 5px;
+}
+
+.text-step {
+    display: block;
+    font-size: 1rem;
+    font-weight: lighter;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.p-content {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.ing-style {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: lighter;
+    margin-right: 10px;
+}
+
+.ing-btn {
+    background-color: lightblue;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
