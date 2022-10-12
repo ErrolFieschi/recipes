@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http"
-import { BehaviorSubject, delay, map, Observable, tap } from "rxjs";
+import { BehaviorSubject, delay, map, Observable, switchMap, tap } from "rxjs";
 import { environment } from "src/environments/environment"; // DEV MOD
 import { Recipe } from "../models/recipe.model";
+import { FormGroup } from "@angular/forms";
 
 @Injectable()
 export class RecipesService {
@@ -52,5 +53,8 @@ export class RecipesService {
         );
     };
 
+    addRecipe(data: any){
+        return this.http.post(`${environment.apiUrl}/recipes`, data);
+    }
 
 }

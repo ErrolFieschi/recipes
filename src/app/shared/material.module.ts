@@ -10,7 +10,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
-import {MatGridListModule} from '@angular/material/grid-list'; 
+import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
@@ -31,4 +31,4 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule
   ]
 })
-export class MaterialModule {}
+export class MaterialModule { }
