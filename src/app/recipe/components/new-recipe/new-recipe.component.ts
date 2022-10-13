@@ -40,7 +40,7 @@ export class NewRecipeComponent implements OnInit {
       prepTime: ['', Validators.required],
       cookTime: ['', Validators.required],
       eaters: ['', Validators.required],
-      type: ['', Validators.required],
+      type: ['dishe', Validators.required],
       createdDate: new Date(),
       steps: this.formBuilder.array([]),
       ingredients: this.formBuilder.array([])
@@ -65,7 +65,9 @@ export class NewRecipeComponent implements OnInit {
   addIngredients() {
     const ingredientForm = this.formBuilder.group({
       title: ['', Validators.required],
-      pound: ['', Validators.required]
+      number: ['', Validators.required],
+      unit: ['g', Validators.required]
+
     })
     this.ingredients.push(ingredientForm);
   };
@@ -80,7 +82,8 @@ export class NewRecipeComponent implements OnInit {
   };
 
   sendForm() {
-    this.recipesService.addRecipe(this.form.value).subscribe((result) => console.warn(result));
+    console.warn(this.form.value);
+    //this.recipesService.addRecipe(this.form.value).subscribe((result) => console.warn(result));
   };
 
 

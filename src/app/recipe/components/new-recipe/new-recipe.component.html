@@ -1,5 +1,111 @@
 <div class="container">
-    <h3>Ajouter une recette:</h3>
+    <mat-card [formGroup]="form" class="main-form">
+        <h1>Ajouter une recette</h1>
+        <mat-card class="form-card">
+            <mat-form-field appearance="fill">
+                <mat-label>Nom de la recette</mat-label>
+                <input type="text" matInput formControlName="title">
+                <mat-error>Ce champ est requis</mat-error>
+            </mat-form-field>
+        </mat-card>
+
+        <mat-card class="form-card">
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre de personnes</mat-label>
+                <input type="number" matInput formControlName="eaters">
+                <mat-error>Ce champ est requis</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-select formControlName="type">
+                    <mat-option value="starter">Entrée</mat-option>
+                    <mat-option value="dishe">Plat</mat-option>
+                    <mat-option value="desert">Dessert</mat-option>
+                    <mat-option value="appetizers">Apéritifs</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card>
+
+        <mat-card>
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input type="text" matInput formControlName="description">
+                <mat-error>Ce champ est requis</mat-error>
+            </mat-form-field>
+        </mat-card>
+
+        <mat-card>
+            <mat-form-field appearance="fill">
+                <mat-label>Url de l'image</mat-label>
+                <input type="text" matInput formControlName="imageUrl">
+                <mat-error>Ce champ est requis</mat-error>
+            </mat-form-field>
+        </mat-card>
+
+        <mat-card>
+            <div class="form-row">
+                <mat-form-field appearance="fill">
+                    <mat-label>Temps de préparation</mat-label>
+                    <input type="number" matInput formControlName="prepTime">
+                    <mat-error>Ce champ est requis</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Temps de cuisson</mat-label>
+                    <input type="number" matInput formControlName="cookTime">
+                    <mat-error>Ce champ est requis</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-card>
+        <mat-card>
+            <ng-container formArrayName="steps">
+                <ng-container *ngFor="let stepForm of steps.controls; let i = index">
+                    <div class="steps-form-row" [formGroupName]="i">
+                        <mat-form-field appearance="fill">
+                            <textarea matInput formControlName="title" placeholder="Text"></textarea>
+                        </mat-form-field>
+                        <mat-icon class="delete-btn" (click)="deleteStep(i)">
+                            delete_forever</mat-icon>
+                    </div>
+                </ng-container>
+            </ng-container>
+            <button mat-button class="btn-bg" color="primary" (click)="addSteps()"> Ajouter une étape </button>
+        </mat-card>
+        <mat-card>
+            <ng-container formArrayName="ingredients">
+                <ng-container *ngFor="let ingForm of ingredients.controls; let i = index">
+                    <div class="ingredient-form-row" [formGroupName]="i">
+                        <mat-form-field appearance="fill">
+                            <input matInput formControlName="title" placeholder="Nom">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <input matInput formControlName="number" type="number" placeholder="valeur">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-select formControlName="unit">
+                                <mat-option value="g">Grammes</mat-option>
+                                <mat-option value="kg">Kilogrammes</mat-option>
+                                <mat-option value="u">Unitée(s)</mat-option>
+                                <mat-option value="cl">Centilitres</mat-option>
+                                <mat-option value="ml">Millilitres</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-icon class="delete-btn" (click)="deleteIngredient(i)">
+                            delete_forever
+                        </mat-icon>
+                    </div>
+                </ng-container>
+            </ng-container>
+
+            <button mat-button class="btn-bg" color="primary" (click)="addIngredients()"> Ajouter un Ingrédient
+            </button>
+        </mat-card>
+        <mat-card *ngIf="form.valid">
+            <button mat-button class="btn-bg" color="primary" (click)="sendForm()"> Enregistrer </button>
+        </mat-card>
+    </mat-card>
+
+    <!--h3>Ajouter une recette:</h3>
     <div class="add-steps-form" [formGroup]="form">
         <label>Nom de la recette</label>
         <input type="text" placeholder="Nom de la recette" formControlName="title">
@@ -54,4 +160,4 @@
         <button mat-button (click)="sendForm()"> Enregistrer </button>
 
     </div>
-</div>
+</div-->
