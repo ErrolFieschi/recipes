@@ -1,0 +1,7 @@
+<div *ngIf="ingredients.length" class="flex-content">
+    <div *ngFor="let ingredient of ingredients" >
+        <button mat-button class="ing-style ing-btn">
+            <p>{{ingredient.title}}&ensp; {{ingredient.number}}{{ingredient.unit}}</p>
+        </button>
+    </div>
+</div>

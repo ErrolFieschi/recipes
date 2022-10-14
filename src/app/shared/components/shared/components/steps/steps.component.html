@@ -1,0 +1,6 @@
+<div *ngIf="steps.length" class="flex-content">
+    <div *ngFor="let step of steps; let i = index">
+        <div class="circle">{{i+1}}</div>
+        <p class="text-step">{{step.title}}</p>
+    </div>
+</div>
