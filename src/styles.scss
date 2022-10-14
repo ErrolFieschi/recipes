@@ -36,6 +36,25 @@ a {
       text-decoration: underline;
     }
   }
+  .global-btn{
+    background-color: #ff2172;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px!important;
+  }
+  .global-btn-yellow{
+    background-color: #ffff94;
+    color: black;
+  }
+
+  .global-btn-info{
+    background-color: #e5ffe5;
+    color: black;
+  }
+
+  .global-btn-orange{
+    background-color: #ffd34d;
+    color: black;
+  }
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 

@@ -29,13 +29,18 @@ export class RecipesService {
     private lastRecipeLoad = 0; //refresh automatique des données au bout de 5 min, évite que les données soient recharger à chaque appelle de la page
 
 
+   /* getRecipesTest() :Observable<Recipe> {
+        return this.http.get('https://bittrex.com/api/v1.1/public/getmarketsummary?market=btc-zec')
+        .map((response: Response) => response.json());
+      }
+*/
     getRecipesFromServer(){
         if (Date.now() - this.lastRecipeLoad <= 300000) {
             return;
         }
         this.setLoadingStatus(true);
         this.http.get<Recipe[]>(`${environment.apiUrl}/recipes`).pipe(
-          delay(1000),
+          //delay(1000),
           tap(recipes => {
             this._recipes$.next(recipes);
             this.setLoadingStatus(false);
@@ -57,4 +62,5 @@ export class RecipesService {
         return this.http.post(`${environment.apiUrl}/recipes`, data);
     }
 
+    
 }

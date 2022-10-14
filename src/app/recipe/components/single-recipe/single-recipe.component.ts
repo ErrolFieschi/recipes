@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, Observable, switchMap } from 'rxjs';
+import { Ingredient } from 'src/app/core/models/ingredient.model';
 import { Recipe } from '../../models/recipe.model';
 import { RecipesService } from '../../services/recipes.service';
 
@@ -11,6 +12,7 @@ import { RecipesService } from '../../services/recipes.service';
 })
 export class SingleRecipeComponent implements OnInit {
 
+  
   recipe$!: Observable<Recipe>;
   loading$!: Observable<boolean>;
 
@@ -20,17 +22,15 @@ export class SingleRecipeComponent implements OnInit {
     this.initObservable();
   }
 
-  private initObservable(){
+  private initObservable() {
     this.loading$ = this.recipesService.loading$;
     this.recipe$ = this.route.params.pipe(
       switchMap(params => this.recipesService.getRecipeById(params['id'])) // le'+' transforme un string en number
     )
   }
-  
-  onGoBack(){
+  onGoBack() {
     this.router.navigateByUrl('/mes-recettes');
   };
-
 }
 
 
