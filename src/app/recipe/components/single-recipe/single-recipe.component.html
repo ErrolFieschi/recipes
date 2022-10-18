@@ -1,13 +1,17 @@
 <!-- permet de ne pas créer de DIV cet éléments disparaitra avec la condition -->
 <div class="container">
-    <button mat-button (click)="onGoBack()"
-        class="global-btn">Retour
-    </button>
-   
-   <button style="margin-left:10px" mat-button class="global-btn-orange" (click)="openDialog()"> Supprimer la recette</button>
+
+    <div class="flex-content-between">
+        <button mat-button (click)="onGoBack()" class="global-btn">Retour</button>
+        <div>
+            <button style="margin-left:10px" mat-button class="global-btn-orange" (click)="openDialog()">
+                Modifier</button>
+            <button style="margin-left:10px" mat-button class="global-btn" (click)="openDialog()"> Supprimer</button>
+        </div>
+    </div>
+
     <mat-card class="example-card">
         <ng-container *ngIf="recipe$ | async as recipe">
-
 
             <!-- permet de ne pas créer de DIV cet éléments disparaitra avec la condition -->
 

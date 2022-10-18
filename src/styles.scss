@@ -36,17 +36,22 @@ a {
   .global-btn-yellow{
     background-color: #ffff94;
     color: black;
+    margin-bottom: 10px!important;
   }
 
   .global-btn-info{
     background-color: #e5ffe5;
     color: black;
+    margin-bottom: 10px!important;
   }
 
   .global-btn-orange{
     background-color: #ffd34d;
     color: black;
+    margin-bottom: 10px!important;
+    
   }
+  
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 

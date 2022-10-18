@@ -4,23 +4,38 @@
     <mat-card-title>{{ recipe.title | titlecase }}</mat-card-title>
     <mat-card-subtitle><span>{{ recipe.createdDate | timeAgo }}</span></mat-card-subtitle>
     <mat-card-content>{{ recipe.description | shorten:250 }}</mat-card-content>
-    
+
     <!--mat-card-content>
         <div *ngFor="let step of recipe.steps">{{ step }}</div>
     </mat-card-content-->
     <!--mat-card-content *ngFor="let ing of recipe.ingredients">
         {{ ing[0] }} {{ ing[1] }}
     </mat-card-content-->
-    
-    <mat-card-actions>
-        <button class="global-btn" mat-button>Favoris</button>
+
+    <mat-card-actions class="flex-content">
+
+
+        <!-- <div>
+            <button class="global-btn" mat-button>Favoris</button>
+        </div> -->
+
         <!--mat-icon>query_builder</mat-icon-->
+
         <button mat-button class="global-btn-info"><img class="img-icon" src="../../../../assets/images/baking.png"
                 alt="Cook Time">{{
             recipe.prepTime + " min"}}</button>
         <button mat-button class="global-btn-info"><img class="img-icon" src="../../../../assets/images/cooking.png"
                 alt="Prep Time">{{
             recipe.cookTime + " min"}}</button>
+
+        <!-- <div>
+            <button mat-button class="global-btn-info"><img class="img-icon" src="../../../../assets/images/baking.png"
+                    alt="Cook Time">{{
+                recipe.prepTime + " min"}}</button>
+            <button mat-button class="global-btn-info"><img class="img-icon" src="../../../../assets/images/cooking.png"
+                    alt="Prep Time">{{
+                recipe.cookTime + " min"}}</button>
+        </div> -->
 
     </mat-card-actions>
 </mat-card>

@@ -36,7 +36,7 @@ export class NewRecipeComponent implements OnInit {
         updateOn: 'blur'
       }],
       imageUrl: ['', Validators.required],
-      description: ['', Validators.required],
+      description: [''],
       prepTime: ['', Validators.required],
       cookTime: ['', Validators.required],
       eaters: ['', Validators.required],
