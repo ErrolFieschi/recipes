@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http"
-import { BehaviorSubject, delay, map, Observable, switchMap, tap } from "rxjs";
+import { BehaviorSubject, delay, map, Observable, switchMap, take, tap } from "rxjs";
 import { environment } from "src/environments/environment"; // DEV MOD
 import { Recipe } from "../models/recipe.model";
 import { FormGroup } from "@angular/forms";
@@ -58,8 +58,21 @@ export class RecipesService {
         );
     };
 
-    
+    deleteRecipe(id: number): void{
+        this.setLoadingStatus(true);
+        
+        this.http.delete(`${environment.apiUrl}/recipes/${id}`).pipe(
+            switchMap(() => this._recipes$),
+            take(1),
+            map(recipes => recipes.filter(recipe => recipe._id !== id)),
+            tap(recipes => {
+                this._recipes$.next(recipes);
+                this.setLoadingStatus(false);
+            })
+        ).subscribe();
+    };
 
+    
     addRecipe(data: any){
         return this.http.post(`${environment.apiUrl}/recipes`, data);
     }
