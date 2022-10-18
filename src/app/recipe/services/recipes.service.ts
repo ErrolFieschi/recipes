@@ -58,6 +58,8 @@ export class RecipesService {
         );
     };
 
+    
+
     addRecipe(data: any){
         return this.http.post(`${environment.apiUrl}/recipes`, data);
     }

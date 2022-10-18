@@ -3,6 +3,8 @@
     <button mat-button (click)="onGoBack()"
         class="global-btn">Retour
     </button>
+   
+   <button style="margin-left:10px" mat-button class="global-btn-orange" (click)="openDialog()"> Supprimer la recette</button>
     <mat-card class="example-card">
         <ng-container *ngIf="recipe$ | async as recipe">
 
