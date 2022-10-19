@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http"
 import { BehaviorSubject, delay, map, Observable, switchMap, take, tap } from "rxjs";
-import { environment } from "src/environments/environment"; // DEV MOD
+import { environment } from "src/environments/environment.prod"; // DEV MOD
 import { Recipe } from "../models/recipe.model";
 import { FormGroup } from "@angular/forms";
 
