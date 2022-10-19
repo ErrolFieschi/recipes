@@ -83,6 +83,7 @@ export class NewRecipeComponent implements OnInit {
 
   sendForm() {
     this.recipesService.addRecipe(this.form.value).subscribe((result) => console.warn(result));
+    this.form.reset();
   };
 
 
