@@ -12,19 +12,19 @@
 
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <span class="navbar-brand mb-0 h1"><a routerLink="/mes-recettes">Mes recettes</a></span>
+        <span class="navbar-brand mb-0 h1"><a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="navActive" routerLink="/mes-recettes">Mes recettes</a></span>
       </li>
       <li class="nav-item">
-        <span class="navbar-brand mb-0 h1"><a routerLink="/mes-recettes/new">Ajouter une recette</a></span>
+        <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="/mes-recettes/new">Ajouter une recette</a></span>
       </li>
       <li class="nav-item">
-        <span class="navbar-brand mb-0 h1"><a routerLink="/mes-recettes">Découvrir</a></span>
+        <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="#">Découvrir</a></span>
       </li>
       <li class="nav-item">
-        <span class="navbar-brand mb-0 h1"><a routerLink="/mes-recettes">Favoris</a></span>
+        <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="#">Favoris</a></span>
       </li>
       <li class="nav-item">
-        <span class="navbar-brand mb-0 h1"><a routerLink="/mes-recettes">Connexion / Inscription</a></span>
+        <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="/inscription">Compte</a></span>
       </li>
     </ul>
   </div>

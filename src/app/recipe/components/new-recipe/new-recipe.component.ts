@@ -12,6 +12,11 @@ import { RecipesService } from '../../services/recipes.service';
 })
 export class NewRecipeComponent implements OnInit {
 
+  loading = false;
+  alertSuccess: boolean = false;
+  alertError: boolean = false;
+  alertValue!: any;
+  
   recipeForm!: FormGroup;
   recipeFormSimple!: FormGroup;
   form!: FormGroup;
@@ -82,7 +87,8 @@ export class NewRecipeComponent implements OnInit {
   };
 
   sendForm() {
-    this.recipesService.addRecipe(this.form.value).subscribe((result) => console.warn(result));
+    console.log(this.form.value);
+    this.recipesService.addRecipe(this.form.value).subscribe((result) => console.warn(result)); //console.warn(result) me renvoi la reponse du serveur
     this.form.reset();
   };
 

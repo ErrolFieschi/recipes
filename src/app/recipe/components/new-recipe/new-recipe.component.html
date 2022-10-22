@@ -1,4 +1,13 @@
 <div class="container">
+
+    <div *ngIf="alertSuccess" class="alert alert-success" role="alert">
+        {{alertValue.message}}
+    </div>
+
+    <div *ngIf="alertError" class="alert alert-error" role="alert">
+        Une erreur est surevenue
+    </div>
+    
     <mat-card [formGroup]="form" class="main-form">
         <h1>Ajouter une recette</h1>
         <mat-card class="form-card">

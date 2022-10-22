@@ -7,14 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RegisterComponent,
-    LoginComponent
+    AppComponent
     ],
   imports: [
     BrowserModule,
