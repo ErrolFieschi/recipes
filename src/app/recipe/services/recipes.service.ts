@@ -29,25 +29,38 @@ export class RecipesService {
     private lastRecipeLoad = 0; //refresh automatique des données au bout de 5 min, évite que les données soient recharger à chaque appelle de la page
 
 
-   /* getRecipesTest() :Observable<Recipe> {
-        return this.http.get('https://bittrex.com/api/v1.1/public/getmarketsummary?market=btc-zec')
-        .map((response: Response) => response.json());
-      }
-*/
-    getRecipesFromServer(){
+    /* getRecipesTest() :Observable<Recipe> {
+         return this.http.get('https://bittrex.com/api/v1.1/public/getmarketsummary?market=btc-zec')
+         .map((response: Response) => response.json());
+       }
+ */
+    getRecipesFromServer() {
         if (Date.now() - this.lastRecipeLoad <= 300000) {
             return;
         }
         this.setLoadingStatus(true);
         this.http.get<Recipe[]>(`${environment.apiUrl}/recipes`).pipe(
-          //delay(1000),
-          tap(recipes => {
-            this._recipes$.next(recipes);
-            this.setLoadingStatus(false);
-          })
+            //delay(1000),
+            tap(recipes => {
+                this._recipes$.next(recipes);
+                this.setLoadingStatus(false);
+            })
         ).subscribe();
     };
-    
+
+    getRecipesByUser() {
+        if (Date.now() - this.lastRecipeLoad <= 300000) {
+            return;
+        }
+        this.setLoadingStatus(true);
+        this.http.get<Recipe[]>(`${environment.apiUrl}/recipes`).pipe(
+            //delay(1000),
+            tap(recipes => {
+                this._recipes$.next(recipes);
+                this.setLoadingStatus(false);
+            })
+        ).subscribe();
+    }
 
     getRecipeById(id: number): Observable<Recipe> {
         if (!this.lastRecipeLoad) {
@@ -58,9 +71,9 @@ export class RecipesService {
         );
     };
 
-    deleteRecipe(id: number): void{
+    deleteRecipe(id: number): void {
         this.setLoadingStatus(true);
-        
+
         this.http.delete(`${environment.apiUrl}/recipes/${id}`).pipe(
             switchMap(() => this._recipes$),
             take(1),
@@ -72,10 +85,10 @@ export class RecipesService {
         ).subscribe();
     };
 
-    
-    addRecipe(data: any){
+
+    addRecipe(data: any) {
         return this.http.post(`${environment.apiUrl}/recipes`, data);
     }
 
-    
+
 }

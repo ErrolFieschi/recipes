@@ -8,7 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 import { RecipeListItemComponent } from './components/recipe-list-item/recipe-list-item.component';
 import { SingleRecipeComponent } from './components/single-recipe/single-recipe.component';
 import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
-import { KeyValue } from '@angular/common';
 
 
 @NgModule({
@@ -16,8 +15,8 @@ import { KeyValue } from '@angular/common';
     RecipeListComponent,
     RecipeListItemComponent,
     SingleRecipeComponent,
-    NewRecipeComponent
-  ],
+    NewRecipeComponent,
+    ],
   imports: [
     CommonModule,
     RecipeRoutingModule,
