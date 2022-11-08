@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { RecipeListItemComponent } from './components/recipe-list-item/recipe-list-item.component';
 import { SingleRecipeComponent } from './components/single-recipe/single-recipe.component';
 import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
+import { RecipeUserComponent } from './components/recipe-user/recipe-user.component';
 
 
 @NgModule({
@@ -16,6 +17,8 @@ import { NewRecipeComponent } from './components/new-recipe/new-recipe.component
     RecipeListItemComponent,
     SingleRecipeComponent,
     NewRecipeComponent,
+    RecipeUserComponent
+    
     ],
   imports: [
     CommonModule,

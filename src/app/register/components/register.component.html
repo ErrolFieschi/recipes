@@ -10,9 +10,6 @@
 
     <mat-card [formGroup]="mainForm" class="main-form">
         <mat-card-title>Inscription</mat-card-title>
-
-
-
         <mat-card class="form-card" [formGroup]="emailForm">
             <mat-card-subtitle>Email</mat-card-subtitle>
             <div class="form-row">
@@ -29,12 +26,6 @@
             </div>
             <small class="error-text" *ngIf="showEmailError$ | async">Les deux adresses ne correspondent pas</small>
         </mat-card>
-
-
-
-
-
-
         <mat-card class="form-card" [formGroup]="loginInfoForm">
             <mat-card-subtitle>Informations de connexion</mat-card-subtitle>
             <mat-form-field appearance="fill">

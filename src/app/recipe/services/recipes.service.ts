@@ -16,10 +16,16 @@ export class RecipesService {
         return this._loading$.asObservable();
     };
 
+    private _myRecipes$ = new BehaviorSubject<Recipe[]>([]);
+
     private _recipes$ = new BehaviorSubject<Recipe[]>([]);
 
     get recipes$(): Observable<Recipe[]> {
         return this._recipes$.asObservable();
+    };
+
+    get myRecipes$(): Observable<Recipe[]> {
+        return this._myRecipes$.asObservable();
     };
 
     private setLoadingStatus(loading: boolean) {
@@ -53,10 +59,10 @@ export class RecipesService {
             return;
         }
         this.setLoadingStatus(true);
-        this.http.get<Recipe[]>(`${environment.apiUrl}/recipes`).pipe(
+        this.http.get<Recipe[]>(`${environment.apiUrl}/recipes/recipes/my-recipes`).pipe(
             //delay(1000),
             tap(recipes => {
-                this._recipes$.next(recipes);
+                this._myRecipes$.next(recipes);
                 this.setLoadingStatus(false);
             })
         ).subscribe();

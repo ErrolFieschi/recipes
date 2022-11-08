@@ -119,8 +119,6 @@ export class RegisterComponent implements OnInit {
       return 'Ce champ est requis';
     } else if (ctrl.hasError('email')) {
       return 'Merci de rentrer une adresse mail valide'
-    } else if (ctrl.hasError('maxlength')) {
-      return 'Ce numéro de téléphone contient trop de chiffres'
     } else {
       return 'Ce champ contient une erreur';
     }

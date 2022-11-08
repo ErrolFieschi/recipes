@@ -18,7 +18,7 @@ export class RecipeListItemComponent implements OnInit {
   }
 
   onContinue(recipeId: number){
-    this.router.navigateByUrl(`mes-recettes/${recipeId}`); // cette méthode est utilisable dans les components contrairement à routerlinks
+    this.router.navigateByUrl(`recipes/${recipeId}`); // cette méthode est utilisable dans les components contrairement à routerlinks
   }
 
 

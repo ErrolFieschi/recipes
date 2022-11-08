@@ -12,20 +12,24 @@
 
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <span class="navbar-brand mb-0 h1"><a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="navActive" routerLink="/mes-recettes">Mes recettes</a></span>
-      </li>
-      <li class="nav-item">
-        <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="/mes-recettes/new">Ajouter une recette</a></span>
+        <span class="navbar-brand mb-0 h1"><a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="navActive" routerLink="/recipes/my-recipes">Mes recettes</a></span>
       </li>
       <li class="nav-item">
         <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="#">Découvrir</a></span>
       </li>
       <li class="nav-item">
-        <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="#">Favoris</a></span>
+        <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="/recipes/new">Ajouter une recette</a></span>
       </li>
-      <li class="nav-item">
-        <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="/inscription">Compte</a></span>
+      <li *ngIf="checkLogedIn()" class="nav-item">
+        <span (click)="logout()" class="navbar-brand mb-0 h1"><a routerLinkActive="navActive">Deconnexion</a></span>
       </li>
+      <li *ngIf="!checkLogedIn()" class="nav-item">
+        <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="/auth/login">Se connecter</a></span>
+      </li>
+      <li *ngIf="!checkLogedIn()" class="nav-item">
+        <span class="navbar-brand mb-0 h1"><a routerLinkActive="navActive" routerLink="/inscription">S'inscrire</a></span>
+      </li>
+      
     </ul>
   </div>
 </nav>

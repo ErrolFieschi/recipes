@@ -16,7 +16,7 @@ export class NewRecipeComponent implements OnInit {
   alertSuccess: boolean = false;
   alertError: boolean = false;
   alertValue!: any;
-  
+
   recipeForm!: FormGroup;
   recipeFormSimple!: FormGroup;
   form!: FormGroup;
@@ -27,6 +27,8 @@ export class NewRecipeComponent implements OnInit {
   ngOnInit(): void {
     this.testForm();
     this.intitFormRecipeBuilder();
+    this.addSteps();
+    this.addIngredients();
 
   }
 
@@ -49,6 +51,7 @@ export class NewRecipeComponent implements OnInit {
       createdDate: new Date(),
       steps: this.formBuilder.array([]),
       ingredients: this.formBuilder.array([])
+      //public - private 
     })
   }
 
