@@ -9,6 +9,7 @@ import { RecipeListItemComponent } from './components/recipe-list-item/recipe-li
 import { SingleRecipeComponent } from './components/single-recipe/single-recipe.component';
 import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
 import { RecipeUserComponent } from './components/recipe-user/recipe-user.component';
+import { UpdateRecipeComponent } from './components/update-recipe/update-recipe.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { RecipeUserComponent } from './components/recipe-user/recipe-user.compon
     RecipeListItemComponent,
     SingleRecipeComponent,
     NewRecipeComponent,
-    RecipeUserComponent
+    RecipeUserComponent,
+    UpdateRecipeComponent
     
     ],
   imports: [
